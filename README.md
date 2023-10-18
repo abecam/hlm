@@ -8,7 +8,7 @@ As so, it is highly unsecure, the connections are always connected (i.e. all cli
 
 # Concept
 
-[[images/HLM.png]]
+![Overview](./images/HLM.png)
 
 The principal idea is to give a uniform, simple to use and simple to remember way to be used by and to use other elements. To achieve this simplicity, we have defined a module:
 - one module usually is always instantiated. You can call a module anyway, and you call always the same module. You manage multiple instances only if you want to.
@@ -28,7 +28,7 @@ Then, we use the high-level characteristic of the used language to offer both th
 
 The schema bellow shows an extensive view, even if not exhaustive, of the generic module support, the high-level manager. 
 
-[[images/HLM-Core.png]]
+![Core of the HLM](./images/HLM-Core.png)
 
 The module list manager simply adds/extracts the module descriptions of the modules to/from the description file. The Module Instance Manager is the most important manager and allows the instantiation and the use of the modules. The communication manager handles the distant connection using threaded sockets (both server and client). In the current implementation, only the command communication is working, as it is the main and only mandatory communication, allowing using distant modules. The channels are important (they are virtual “direct link” of data between modules), as they are more suited to important flux of data, and should be developed for the next version of this architecture. They have been already designed properly, but the implemented solution is not usable and need to be fixed.
 The Commands Dispatcher, as the name show, serves at dispatching one command to a distant module, and receives the result.
