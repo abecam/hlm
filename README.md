@@ -6,7 +6,9 @@ As the prototype was not extended afterward, the HLM was not updated much. It wa
 
 As so, it is highly unsecure, the connections are always connected (i.e. all clients need to stay connected to their socket) and there are probably many other things to change or update to go toward something usable for serious applications. So if you do so, it is at your own risk.
 
-# CONCEPT
+# Concept
+
+[[images/HLM.png]]
 
 The principal idea is to give a uniform, simple to use and simple to remember way to be used by and to use other elements. To achieve this simplicity, we have defined a module:
 - one module usually is always instantiated. You can call a module anyway, and you call always the same module. You manage multiple instances only if you want to.
@@ -22,9 +24,11 @@ And the implementation of one module follows simple rules, which allows it to no
 - any advance mechanism might no be in one module but accessible via one module.
 Then, we use the high-level characteristic of the used language to offer both this simplicity and these functionalities. Even if we use Java, this solution was designed to be cross-platform and language and might be extended to other languages. The main functionality needed is the introspection: the modules are described, retrieved, ran and used using the introspection. Then, the global architecture is composed of different managers, forming themselves a high-level manager.
 
-# THE “HIGH-LEVEL MANAGER”
+# The “HIGH-LEVEL MANAGER”
 
 The schema bellow shows an extensive view, even if not exhaustive, of the generic module support, the high-level manager. 
+
+[[images/HLM-Core.png]]
 
 The module list manager simply adds/extracts the module descriptions of the modules to/from the description file. The Module Instance Manager is the most important manager and allows the instantiation and the use of the modules. The communication manager handles the distant connection using threaded sockets (both server and client). In the current implementation, only the command communication is working, as it is the main and only mandatory communication, allowing using distant modules. The channels are important (they are virtual “direct link” of data between modules), as they are more suited to important flux of data, and should be developed for the next version of this architecture. They have been already designed properly, but the implemented solution is not usable and need to be fixed.
 The Commands Dispatcher, as the name show, serves at dispatching one command to a distant module, and receives the result.
