@@ -1,0 +1,69 @@
+Module:SModule: Java
+Methods:
+Method:addModule::string:string. return:int. endofmethod. 
+Method:removeModule::string. return:int. endofmethod. 
+No more methods.
+
+Module:Chat: Java
+Methods:
+Method:createAccount::string:string. return:int. endofmethod.
+Method:login::string:string. return:int. endofmethod.
+Method:logout::string. return:int. endofmethod.
+Method:getPrivateMessages::string. return:string. endofmethod.
+Method:addPrivateMessages::string:string:string. return:int. endofmethod.
+Method:addFriend::string:string. return:int. endofmethod.
+Method:removeFriend::string:string. return:int. endofmethod.
+Method:getEvents::string. return:string. endofmethod.
+Method:getFriends::string. return:string. endofmethod.
+Method:joinRoom::string:string. return:int. endofmethod.
+Method:leaveRoom::string:string. return:int. endofmethod.
+Method:getMessages::string:string. return:string. endofmethod.
+Method:addMessage::string:string:string. return:int. endofmethod.
+Method:test::. return:int. endofmethod.
+No more methods.
+
+Module:SeeThem: Java
+Methods:
+Method:managePos::string:string:float:float:float:float:int:int. return:string. endofmethod. 
+Method:giveEntities2D::float:float:float:float. return:string. endofmethod. 
+Method:givePlayer2D::string. return:string. endofmethod. 
+Method:updateSubjects::float:float. return:string. endofmethod. 
+No more methods.
+
+Module:SeeThem2: Java
+Methods:
+Method:managePos::string:string:float:float:float:float:int:float. return:string. endofmethod. 
+Method:giveEntities2D::float:float:float:float. return:string. endofmethod. 
+Method:givePlayer2D::string. return:string. endofmethod. 
+Method:updateSubjects::float:float:float. return:string. endofmethod. 
+No more methods.
+
+Module:PlayerReceiver: Java
+Methods:
+Method:managePos::int:float:float:float:float:int. return:string. endofmethod. 
+No more methods.
+Module:DummyReceiver3: Java
+Methods:
+Method:managePos::float:float. return:string. endofmethod. 
+Method:returnPos::noparameters. return:string. endofmethod. 
+No more methods.
+Module:DummyReceiver3: Java
+Methods:
+Method:managePos::float:float. return:string. endofmethod. 
+Method:returnPos::noparameters. return:string. endofmethod. 
+No more methods.
+Module:PlayerReceiverF: Java
+Methods:
+Method:managePos::int:float:float:float:float:int. return:string. endofmethod. 
+No more methods.
+Module:PlayerReceiverF: Java
+Methods:
+Method:managePos::int:float:float:float:float:int. return:string. endofmethod. 
+No more methods.
+Module:MFile: Java
+Methods:
+Method:getName::noparameters. return:string. endofmethod. 
+Method:getAbsolutePath::noparameters. return:string. endofmethod. 
+Method:isDirectory::noparameters. return:int. endofmethod. 
+Method:listFiles::noparameters. return:string. endofmethod. 
+No more methods.

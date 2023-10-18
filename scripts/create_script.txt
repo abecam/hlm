@@ -1,0 +1,43 @@
+CREATE TABLE player (
+  player_nick VARCHAR(20) NOT NULL,
+  player_password VARCHAR(255) NOT NULL,
+  player_active BOOLEAN NOT NULL,
+  player_faction VARCHAR(20) NOT NULL,
+  player_name VARCHAR(45) NULL,
+  PRIMARY KEY(player_nick)
+);
+
+CREATE TABLE player_info (
+  player_nick VARCHAR(20) NOT NULL,
+  player_x FLOAT NOT NULL,
+  player_y FLOAT NOT NULL,
+  player_z FLOAT NOT NULL,
+  player_direction FLOAT NOT NULL,
+  player_status INTEGER NOT NULL,
+  player_mindenergy INTEGER NOT NULL,
+  player_inventory1 INTEGER NOT NULL,
+  player_inventory2 INTEGER NOT NULL,
+  player_inventory3 INTEGER NOT NULL,
+  player_inventory4 INTEGER NOT NULL,
+  player_sectInfo INTEGER NOT NULL,
+  PRIMARY KEY(player_nick),
+  FOREIGN KEY(player_nick)
+    REFERENCES player(player_nick)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
+CREATE TABLE player_friend (
+  player_nick VARCHAR(20) NOT NULL,
+  friend_nick VARCHAR(20) NOT NULL,
+  PRIMARY KEY(player_nick, friend_nick),
+  FOREIGN KEY(player_nick)
+    REFERENCES player(player_nick)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(friend_nick)
+    REFERENCES player(player_nick)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+

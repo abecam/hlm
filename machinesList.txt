@@ -1,0 +1,66 @@
+Machine:
+	hostname: localhost
+	type: PcClient
+	alias: truc
+	group: bidule, truc
+	language: java
+end.
+
+Machine:
+	hostname: localhost
+	type: PcClient2
+	alias: truc2
+	group: biduleseul
+	language: Python
+end.
+
+
+
+Machine:
+	hostname: localhost
+	type: MobileClient
+	alias: 
+	group: bidule, truc, machin, loup
+	language: java
+end.
+
+Machine:
+	hostname: localhost
+	type: PcServer
+	alias: truc3
+	group: 
+	language: java
+end.
+
+Machine:
+	hostname: localhost
+	type: PcServer
+	alias: 
+	group: 
+	language: java
+end.
+
+Machine:
+	hostname: localhost
+	type: PcServer
+	alias: 
+	group: 
+	language: java
+end.
+
+Machine:
+	hostname: localhost
+	type: PcServer
+	alias: 
+	group: 
+	language: java
+end.
+
+
+Machine:
+	hostname: 193.11.8.108
+	type: PcServer
+	alias: 
+	group: 
+	language: java
+end.

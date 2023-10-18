@@ -1,0 +1,8 @@
+
+
+Module:localhost:JustForTest: Java
+Methods:
+Method:myMethod::string:int. return:int. endofmethod. 
+Method:myOtherMethod::noparameters. return:string. endofmethod. 
+No more methods.
+
