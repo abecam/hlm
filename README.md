@@ -54,6 +54,7 @@ Method:myOtherMethod::noparameters. return:string. endofmethod.
 No more methods.
 
 This description is specifically conceived to correspond to a small common subset of most of the programming languages, to allow us to give an abstract way to use them. To illustrate better what is a module and how we define it, we can give an example, where we incorporate the following Java class into the module base:
+```
 package modulerepository;
 
 public class DummyClass
@@ -67,18 +68,23 @@ public class DummyClass
       public int dummyMethod1 ( ... )
         ...
 }
+```
 To add the methods to communicate, we define them in an interface. The usable types are the only ones defined for one module, and these methods have to take care of the allowed limits, as they can be of a type that differs from the supporting language to the module types. The numerical types are conceived to correspond to the possibilities of most languages, i.e. they implements the smallest common limits. This interface should look like the following:
+```
 package modulerepository;
 
 public interface DummyPublicInterface
 {
     public int dummyEntry(String oneParameter);
 }
+```
 Then we implement this interface into DummyClass. Then, a specific tool, named ExtractInterface, can use the name of the class and of the right interface to write the module description, which is independent to the supporting language:
+```
 Module:mmrolink.DummyClass: Java
 Methods:
 Method:dummyEntry::string. return:int. endofmethod.
 No more methods.
+```
 A special module, the Super Module (“SModule”) has the special ability to extract the module description from a class and an interface and to start the described module immediately, giving the addModule(“nameOfModule”,”interfaceOfModule”) method. This module must always be started (we envisage to instantiate it without description) and will also be used to remove/change a module.
 Following the previous example, you can add the module using the console by typing SModule.addModule(“DummyClass”,”DummyPublicInterface”) then you can use the module’s methods, for example by writing DummyClass.dummyEntry(“One try”).
 
@@ -97,6 +103,7 @@ A specific class, ToGetResults, can be used to recover the result from a distant
 # One application: The Garden of Earthly Delights
 
 We used this solution to write the game prototype Garden Of Earthly Delight in the WP Massively Multiplayer Reaching Out of the project IPerG (IPerG 2005). This prototype allowed both PC clients and mobile clients to play the same game. The high-level manager was used as the main server, used by the PC client and the Mobile server, which serves as a proxy for the mobile clients. All game-related functions have been implemented into modules, as the game logic, in the module GameManagement. This module offers a clear public interface, as you can see in this extract of the Java interface used for the module description:
+```
 public interface IGameManagement
 {
     // Player distributed method
@@ -113,8 +120,9 @@ public interface IGameManagement
     // Drain/Boost action (mobile play only)
     public void mobileSpell(int type, int energy, String creatorId, String targetNick);
 }
+```
 These methods are synchronised and might be used by both PC and Mobile clients, even if some are specific to a client type. The same module (so the same instance of the class) is used by all the different clients. Classes represent the game entities and the game-play is contained into this module. One specific method, onTick, implemented from a particular interface to use a facility class, Tick, is called regularly by a thread created by the class Tick, and allows to update the monsters and to clean and save the players entities. We will not detail the game logic, as there is no originality in it and it simply tries to follow the game design.
-The persistency is actually managed via a module and was developed by Paulo Lopes. It is an elegant solution but it was dedicated to the game due to the limited development time. It should be enhanced and be usable as a part of the solution, but still separate from the core, as it is not mandatory for the system and works very well via a module.
+The persistency is actually managed via a module and was developed by Paulo Lopes. It is an elegant solution but it was dedicated to the game due to the limited development time. It should be enhanced and be usable as a part of the solution, but still separated from the core, as it is not mandatory for the system and works very well via a module.
 
 
 Have participated to this implementation and helped to enhance the software Paulo Lopes, Joakim Olsson, and Johan Simonsson.
